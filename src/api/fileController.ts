@@ -2,13 +2,13 @@
 /* eslint-disable */
 import request from '@/request'
 
-/** testDownloadFile GET /api/file/test/download/ */
+/** testDownloadFile GET /file/test/download/ */
 export async function testDownloadFileUsingGet(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
   params: API.testDownloadFileUsingGETParams,
   options?: { [key: string]: any }
 ) {
-  return request<any>('/api/file/test/download/', {
+  return request<any>('/file/test/download/', {
     method: 'GET',
     params: {
       ...params,
@@ -17,7 +17,7 @@ export async function testDownloadFileUsingGet(
   })
 }
 
-/** testUploadFile POST /api/file/test/upload */
+/** 文件上传 POST /file/test/upload */
 export async function testUploadFileUsingPost(
   body: {},
   file?: File,
@@ -45,7 +45,7 @@ export async function testUploadFileUsingPost(
     }
   })
 
-  return request<API.BaseResponseString_>('/api/file/test/upload', {
+  return request<API.BaseResponseString_>('/file/test/upload', {
     method: 'POST',
     data: formData,
     requestType: 'form',
