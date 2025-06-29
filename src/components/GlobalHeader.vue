@@ -5,7 +5,7 @@
         <router-link to="/">
           <div class="title-bar">
             <img class="logo" src="../assets/logo.png" alt="logo" />
-            <div class="title">鱼皮云图库</div>
+            <div class="title">方舟云图</div>
           </div>
         </router-link>
       </a-col>
@@ -28,12 +28,6 @@
               </a-space>
               <template #overlay>
                 <a-menu>
-                  <a-menu-item>
-                    <router-link to="/my_space">
-                      <UserOutlined />
-                      我的空间
-                    </router-link>
-                  </a-menu-item>
                   <a-menu-item @click="doLogout">
                     <LogoutOutlined />
                     退出登录
@@ -84,14 +78,9 @@ const originItems = [
     title: '图片管理',
   },
   {
-    key: '/admin/spaceManage',
-    label: '空间管理',
-    title: '空间管理',
-  },
-  {
     key: 'others',
-    label: h('a', { href: 'https://www.codefather.cn', target: '_blank' }, '编程导航'),
-    title: '编程导航',
+    label: h('a', { href: 'https://github.com/RngAd33', target: '_blank' }, 'MyGithub'),
+    title: 'MyGithub',
   },
 ]
 

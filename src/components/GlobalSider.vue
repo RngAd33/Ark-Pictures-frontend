@@ -21,7 +21,6 @@ import { PictureOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons-v
 import { useRouter } from 'vue-router'
 import { useLoginUserStore } from '@/stores/useLoginUserStore.ts'
 import { SPACE_TYPE_ENUM } from '@/constants/space.ts'
-import { listMyTeamSpaceUsingPost } from '@/api/spaceUserController.ts'
 import { message } from 'ant-design-vue'
 
 const loginUserStore = useLoginUserStore()
@@ -68,16 +67,6 @@ const menuItems = computed(() => {
   }
   return [...fixedMenuItems, teamSpaceMenuGroup]
 })
-
-// 加载团队空间列表
-const fetchTeamSpaceList = async () => {
-  const res = await listMyTeamSpaceUsingPost()
-  if (res.data.code === 0 && res.data.data) {
-    teamSpaceList.value = res.data.data
-  } else {
-    message.error('加载我的团队空间失败，' + res.data.message)
-  }
-}
 
 /**
  * 监听变量，改变时触发数据的重新加载

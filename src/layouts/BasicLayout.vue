@@ -11,7 +11,7 @@
         </a-layout-content>
       </a-layout>
       <a-layout-footer class="footer">
-        <a href="https://www.codefather.cn" target="_blank"> 编程导航 by 程序员鱼皮 </a>
+        <a href="https://github.com/RngAd33" target="_blank"> RngAd33 </a>
       </a-layout-footer>
     </a-layout>
   </div>
