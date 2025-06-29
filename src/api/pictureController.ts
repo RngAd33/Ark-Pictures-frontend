@@ -32,21 +32,6 @@ export async function editPictureUsingPost(
   })
 }
 
-/** editPictureByBatch POST /pic/edit/batch */
-export async function editPictureByBatchUsingPost(
-  body: API.PictureEditByBatchRequest,
-  options?: { [key: string]: any }
-) {
-  return request<API.BaseResponseBoolean_>('/pic/edit/batch', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  })
-}
-
 /** 根据id获取图片（管理员） GET /pic/getPI */
 export async function getPictureByIdUsingGet(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
@@ -273,21 +258,6 @@ export async function uploadPictureByUrlUsingPost(
   options?: { [key: string]: any }
 ) {
   return request<API.BaseResponsePictureVO_>('/pic/upload/url', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  })
-}
-
-/** 抓取图片批量上传（仅管理员） POST /pic/upload/batch */
-export async function uploadPictureByBatchUsingPost(
-  body: API.PictureUploadByBatchRequest,
-  options?: { [key: string]: any }
-) {
-  return request<API.BaseResponseInt_>('/pic/upload/batch', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
